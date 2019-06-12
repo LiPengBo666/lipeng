@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../static/jQuery/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<!--<h1 th:text="${users.username}">Hello World</h1><br />-->
+<input id="testOne" value="Hello new Word"/>
+<button id="button" onclick="buttonClick()">点我</button>
+</body>
+<script>
+    window.onload = function () {
+    };
+    $("#button").on("click", function () {
+        alert("123")
+    })
+
+    function buttonClick() {
+        $.ajax({
+            type: "post",
+            url: "/test/One",
+            dataType: "json",
+            success: function (data) {
+                alert(data.status);
+                for (var i = 0; i < data.data.length; i++) {
+                    alert(data.data[i].name)
+                }
+                $("#testOne").val(data.status)
+            }
+        })
+    }
+</script>
+</html>
