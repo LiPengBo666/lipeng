@@ -24,23 +24,10 @@
 
 	<dependencies>
 
-		<!-- Spring Boot web依赖 -->
+		<!-- Spring Boot web依赖, 排除log4j依赖,使用SpringBoot的logback -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<!-- Spring Boot log4j依赖 -->
-		<dependency>
-			<groupId>com.deepoove</groupId>
-			<artifactId>poi-tl</artifactId>
-			<version>1.0.0</version>
-			<!--排除jar包依赖冲突-->
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<!--MongoDB数据库-->
@@ -60,26 +47,17 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.38</version>
 		</dependency>
+		<!--日志类使用注释的插件"lombok",不用再 private static final Logger logger = LoggerFactory.getLogger(TestOne.class);创建-->
+		<!--<dependency>-->
+			<!--<groupId>org.projectlombok</groupId>-->
+			<!--<artifactId>lombok</artifactId>-->
+			<!--<version>1.16.18</version>-->
+		<!--</dependency>-->
+		<!--Thymeleaf模板引擎-->
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-web</artifactId>-->
-			<!--<exclusions>&lt;!&ndash;   去掉默认配置   &ndash;&gt;-->
-				<!--<exclusion>-->
-					<!--<groupId>org.springframework.boot</groupId>-->
-					<!--<artifactId>spring-boot-starter-logging</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
+			<!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
 		<!--</dependency>-->
-		<!--<dependency> &lt;!&ndash; 引入log4j2依赖 &ndash;&gt;&ndash;&gt;-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
-		<!--</dependency>-->
-
-		<!--Thymeleaf模板引擎-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
 		<!--Mybatis框架-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>

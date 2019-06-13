@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration >
+<!--scan="true"配置文件改变,则会重新加载-->
+<configuration>
     <!-- 彩色日志 -->
     <!-- 彩色日志依赖的渲染类 -->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
@@ -151,7 +152,7 @@
     </appender>
 
     <!-- FrameworkServlet日志-->
-    <logger name="org.springframework" level="WARN" />
+    <!--<logger name="org.springframework" level="WARN" />-->
 
     <!-- mybatis日志打印-->
     <logger name="org.apache.ibatis" level="DEBUG" />
@@ -160,8 +161,7 @@
     <!--  项目 mapper 路径
             console控制台显示sql语句：STDOUT.filter.level -> debug级别
     -->
-    <!--<logger name="com.sz.park.admin.dao" level="DEBUG">-->
-    <logger name="cn.shpz.road.park.dao" level="DEBUG" />
+    <logger name="com.springboot.lipeng.dao" level="DEBUG" />
 
 
 
@@ -171,7 +171,7 @@
         <appender-ref ref="WARN" />
         <appender-ref ref="INFO" />
         <appender-ref ref="DEBUG" />
-        <!-- 生产环境将请stdout去掉 -->
+        <!-- 生产环境将请stdout去掉 (控制台将不会打印日志)-->
         <appender-ref ref="STDOUT" />
     </root>
 
