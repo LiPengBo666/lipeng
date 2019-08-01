@@ -1,0 +1,8 @@
+SpringBoot
+Mybatis
+Redis,Shiro
+Result
+Logback
+MongoDB,Mysqle
+FastJson
+Thymeleaf

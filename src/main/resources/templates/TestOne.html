@@ -24,9 +24,9 @@
             url: "/test/One",
             dataType: "json",
             success: function (data) {
-                alert(data.status);
+                // alert(data.status);
                 for (var i = 0; i < data.data.length; i++) {
-                    alert(data.data[i].name)
+                    // alert(data.data[i].name)
                 }
                 $("#testOne").val(data.status)
             }
